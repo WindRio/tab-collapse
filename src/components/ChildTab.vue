@@ -8,7 +8,10 @@
       <Collapse :isBtnStatus="collapseStatus" @collapse-status="onGetCollapseStatus" :collapseKey="collapseKey"
         @collapse-key="onCollapseKey" />
     </a-tab-pane>
-    <!-- <a-tab-pane key="3" tab="Tab 3">Content of Tab Pane 3</a-tab-pane> -->
+    <a-tab-pane :key="props.data[2].key" :tab="props.data[2].name" :forceRender="true">
+      <Collapse :isBtnStatus="collapseStatus" @collapse-status="onGetCollapseStatus" :collapseKey="collapseKey"
+        @collapse-key="onCollapseKey" />
+    </a-tab-pane>
   </a-tabs>
 </template>
 <script lang="ts" setup>

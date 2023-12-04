@@ -9,9 +9,10 @@
         <ChildTab :data="tabData[1].child" :parent-key="activeKey" :collapseStatus="collapseStatus"
           @child-active="handleGetBtnStatus" />
       </a-tab-pane>
-      <!-- <a-tab-pane :key="tabData[0].key" :tab="tabData[0].name">
-        <ChildTab />
-      </a-tab-pane> -->
+      <a-tab-pane :key="tabData[2].key" :tab="tabData[2].name" :forceRender="true">
+        <ChildTab :data="tabData[2].child" :parent-key="activeKey" :collapseStatus="collapseStatus"
+          @child-active="handleGetBtnStatus" />
+      </a-tab-pane>
       <template #rightExtra>
         <a-button shape="circle" :icon="h(CaretUpOutlined)" @click="onCloseAll"
           :disabled="collapseStatus === CollapseType.closeAll" />
