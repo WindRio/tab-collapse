@@ -44,7 +44,7 @@ const handleChangeTab = (key: string) => {
 
 const handleTabData = () => {
   const indexParent = tabData.findIndex((item) => item.key === activeKey.value)
-  const indexChildTab = tabData[indexParent].child.findIndex((item) => item.isActive === true)
+  const indexChildTab = tabData[indexParent].child.findIndex((item) => item.isActive)
   return {
     indexParent, indexChildTab
   }

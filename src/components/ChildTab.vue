@@ -37,7 +37,7 @@ const collapseKey = ref<string[]>([])
 
 const handleTabValue = () => {
   const indexParent = tabData.findIndex((item) => item.key === props.parentKey)
-  const indexChildTab = tabData[indexParent].child.findIndex((item) => item.isActive === true)
+  const indexChildTab = tabData[indexParent].child.findIndex((item) => item.isActive)
   const handleChangeBtnStatus = (val: CollapseType) => {
     tabData[indexParent].child[indexChildTab].statusBtn = val
   }
