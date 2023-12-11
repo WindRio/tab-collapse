@@ -30,7 +30,7 @@ import { CollapseType, tabData } from './data'
 
 const activeKey = ref('1');
 const childTabData = ref<any[]>()
-const childKey = ref<string>('')
+const childKey = ref<string>('1.1')
 const collapseStatus = ref<CollapseType>(CollapseType.openAll)
 
 const getTabParentData = (key: string) => {
@@ -67,9 +67,7 @@ const onOpenAll = () => {
   tabData[indexParent].child[indexChildTab].statusBtn = CollapseType.openAll
 }
 watchEffect(() => {
-  if (childKey.value) {
-    const { indexParent, indexChildTab } = handleTabData()
-    collapseStatus.value = tabData[indexParent].child[indexChildTab].statusBtn
-  }
+  const { indexParent, indexChildTab } = handleTabData()
+  collapseStatus.value = tabData[indexParent].child[indexChildTab].statusBtn
 })
 </script>

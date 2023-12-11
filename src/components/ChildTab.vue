@@ -66,11 +66,12 @@ const onCollapseKey = (val: string[]) => {
 const handleChangeTab = (key: string) => {
   const indexParent = tabData.findIndex((item) => item.key === props.parentKey)
   tabData[indexParent].child.forEach((item, index) => {
-    if (item.key === key) {
-      tabData[indexParent].child[index].isActive = true
-    } else {
-      tabData[indexParent].child[index].isActive = false
-    }
+    // if (item.key === key) {
+    //   tabData[indexParent].child[index].isActive = true
+    // } else {
+    //   tabData[indexParent].child[index].isActive = false
+    // }
+    tabData[indexParent].child[index].isActive = item.key === key
   })
   emits('childActive', key)
 }
